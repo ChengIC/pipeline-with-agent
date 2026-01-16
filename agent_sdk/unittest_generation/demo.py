@@ -7,8 +7,11 @@ A harness demonstrating unit test generation with Claude Agent SDK.
 Tests are generated in the same directory as the source file.
 
 Example Usage:
-    python demo.py --source ./my_module.py
-    python demo.py --source ./my_module.py --model claude-sonnet-4-5-20250929
+    # Run from project root directory
+    python agent_sdk/unittest_generation/demo.py --source data/example_repo/calculator.py
+
+    # Use a specific model
+    python agent_sdk/unittest_generation/demo.py --source data/example_repo/calculator.py --model MiniMax-M2.1
 """
 
 import argparse
@@ -30,11 +33,11 @@ def parse_args() -> argparse.Namespace:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Generate tests for a Python file (tests saved in same directory)
-  python demo.py --source ./calculator.py
+  # Generate tests for a Python file
+  python agent_sdk/unittest_generation/demo.py --source data/example_repo/calculator.py
 
   # Use a specific model
-  python demo.py --source ./calculator.py --model claude-sonnet-4-5-20250929
+  python agent_sdk/unittest_generation/demo.py --source data/example_repo/calculator.py --model MiniMax-M2.1
 
 Environment Variables:
   ANTHROPIC_API_KEY    Your Anthropic API key (required)

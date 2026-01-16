@@ -68,15 +68,14 @@ asyncio.run(main())
 An example Python module is provided in `data/example_repo/calculator.py` for testing:
 
 ```bash
-# Run from the unittest_generation directory
-cd agent_sdk/unittest_generation
+# Run from project root directory
+cd /path/to/pipeline-with-agent
 
 # Generate tests for the example calculator
-python demo.py --source ../../data/example_repo/calculator.py
+python agent_sdk/unittest_generation/demo.py --source data/example_repo/calculator.py
 
 # Run the generated tests
-cd ../../data/example_repo
-pytest -v
+pytest data/example_repo/test_calculator.py -v
 ```
 
 Generated test file will be saved as `data/example_repo/test_calculator.py`.
